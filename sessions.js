@@ -626,12 +626,12 @@ module.exports = class Sessions {
         }
     } //getChatContactNewMsg
     
-    static async loadAndGetAllMessagesInChat(sessionName) {
+    static async loadAndGetAllMessagesInChat(sessionName, chatId) {
         var session = Sessions.getSession(sessionName);
         if (session) {
             if (session.state == "CONNECTED") {
                 var resultloadAndGetAllMessagesInChat = await session.client.then(async (client) => {
-                    return client.loadAndGetAllMessagesInChat();
+                    return client.loadAndGetAllMessagesInChat(chatId);
                 });
                 return {
                     result: resultloadAndGetAllMessagesInChat
