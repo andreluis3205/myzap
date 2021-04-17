@@ -626,15 +626,15 @@ module.exports = class Sessions {
         }
     } //getChatContactNewMsg
     
-    static async loadAndGetAllMessagesInChat(sessionName, chatId) {
+    static async GetAllMessagesInChat(sessionName, chatId) {
         var session = Sessions.getSession(sessionName);
         if (session) {
             if (session.state == "CONNECTED") {
-                var resultloadAndGetAllMessagesInChat = await session.client.then(async (client) => {
+                var resultGetAllMessagesInChat = await session.client.then(async (client) => {
                     return client.loadAndGetAllMessagesInChat('558189826969@c.us');
                 });
                 return {
-                    result: resultloadAndGetAllMessagesInChat
+                    result: resultGetAllMessagesInChat
                 };
             } else {
                 return {
