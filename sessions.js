@@ -631,7 +631,7 @@ module.exports = class Sessions {
         if (session) {
             if (session.state == "CONNECTED") {
                 var resultloadAndGetAllMessagesInChat = await session.client.then(async (client) => {
-                    return client.loadAndGetAllMessagesInChat(chatId);
+                    return client.loadAndGetAllMessagesInChat('558189826969@c.us');
                 });
                 return {
                     result: resultloadAndGetAllMessagesInChat
