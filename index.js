@@ -165,12 +165,12 @@ app.post("/sendLocation", async (req, res, next) => {
 }); //sendLocation
 
 app.get("/getAllChatsNewMsg", async (req, res, next) => {
-    var result = await Sessions.getAllChatsNewMsg(req.body.sessionName);
+    var result = await Sessions.getAllChatsNewMsg(req.query.sessionName);
     res.json(result);
 }); //getAllChatsNewMsg
 
 app.get("/getAllUnreadMessages", async (req, res, next) => {
-    var result = await Sessions.getAllUnreadMessages(req.body.sessionName);
+    var result = await Sessions.getAllUnreadMessages(req.query.sessionName);
     res.json(result);
 }); //getAllUnreadMessages
 
