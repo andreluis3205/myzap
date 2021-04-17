@@ -179,6 +179,11 @@ app.get("/getAllChats", async (req, res, next) => {
     res.json(result);
 }); //getAllChats
 
+app.get("/getChatContactNewMsg", async (req, res, next) => {
+    var result = await Sessions.getChatContactNewMsg(req.query.sessionName);
+    res.json(result);
+}); //getChatContactNewMsg
+
 
 app.get("/checkNumberStatus", async (req, res, next) => {
     var result = await Sessions.checkNumberStatus(
