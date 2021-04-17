@@ -185,7 +185,7 @@ app.get("/getChatContactNewMsg", async (req, res, next) => {
 }); //getChatContactNewMsg
 
 app.get("/loadAndGetAllMessagesInChat", async (req, res, next) => {
-    var result = await Sessions.loadAndGetAllMessagesInChat(req.query.sessionName, req.query.chatId);
+    var result = await Sessions.loadAndGetAllMessagesInChat(req.query.sessionName, req.query.chatId + '@c.us');
     res.json(result);
 }); //loadAndGetAllMessagesInChat
 
