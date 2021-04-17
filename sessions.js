@@ -649,32 +649,6 @@ module.exports = class Sessions {
             };
         }
     } //getChatContactNewMsg
-    
-    
-
-    static async getAllUnreadMessages(sessionName) {
-        var session = Sessions.getSession(sessionName);
-        if (session) {
-            if (session.state == "CONNECTED") {
-                var resultGetAllUnreadMessages = await session.client.then(async (client) => {
-                    return await client.getAllUnreadMessages();
-                });
-                return {
-                    result: resultGetAllUnreadMessages
-                };
-            } else {
-                return {
-                    result: "error",
-                    message: session.state
-                };
-            }
-        } else {
-            return {
-                result: "error",
-                message: "NOTFOUND"
-            };
-        }
-    } //getAllUnreadMessages
 
     static async checkNumberStatus(sessionName, number) {
         var session = Sessions.getSession(sessionName);
