@@ -582,7 +582,7 @@ module.exports = class Sessions {
         var session = Sessions.getSession(sessionName);
         if (session) {
             if (session.state == "CONNECTED") {
-                var getAllChats = await session.client.then(async (client) => {
+                var resultgetAllChats = await session.client.then(async (client) => {
                     return client.getAllChats();
                 });
                 return {
