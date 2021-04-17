@@ -174,6 +174,12 @@ app.get("/getAllUnreadMessages", async (req, res, next) => {
     res.json(result);
 }); //getAllUnreadMessages
 
+app.get("/getAllChats", async (req, res, next) => {
+    var result = await Sessions.getAllChats(req.query.sessionName);
+    res.json(result);
+}); //getAllChats
+
+
 app.get("/checkNumberStatus", async (req, res, next) => {
     var result = await Sessions.checkNumberStatus(
         req.body.sessionName,
